@@ -13,16 +13,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Install dependencies and build the project
-      - name: Make environment variables
+      # Make environment variables
+      - name: Set up environment variables
         run: |
-          echo 'VITE_FIREBASE_API_KEY = ${{ secrets.VITE_FIREBASE_API_KEY }}'>>.env
-          echo 'VITE_FIREBASE_AUTH_DOMAIN = ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}' >> .env
-          echo 'VITE_FIREBASE_PROJECT_ID = ${{ secrets.VITE_FIREBASE_PROJECT_ID }}' >> .env
-          echo 'VITE_FIREBASE_STORAGE_BUCKET = ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}' >> .env.
-          echo 'VITE_FIREBASE_MESSAGING_SENDER_ID = ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID}}' >> .env
-          echo 'VITE_FIREBASE_APP_ID = ${{ secrets.VITE_FIREBASE_APP_ID}}' >> .env
+          echo 'VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}' >> .env
+          echo 'VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}' >> .env
+          echo 'VITE_FIREBASE_DATABASE_URL=${{ secrets.VITE_FIREBASE_DATABASE_URL }}' >> .env
+          echo 'VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}' >> .env
+          echo 'VITE_FIREBASE_STORAGE_BUCKET=${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}' >> .env
+          echo 'VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}' >> .env
+          echo 'VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }}' >> .env
+
       - run: npm ci && npm run build
+
       # Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
