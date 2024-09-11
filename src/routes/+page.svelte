@@ -46,7 +46,7 @@
 		// Fetch sounds and counter initially
 		bgm = new Audio('bgm.mp3');
 		bgm.loop = true;
-		bgm.volume = 0.2;
+		bgm.volume = 0.1;
 
 		fetchCount().then((fetchedCounter) => {
 			counter = fetchedCounter;
