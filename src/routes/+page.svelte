@@ -18,6 +18,7 @@
 	let oldCounter = 0;
 	let bgm: HTMLAudioElement;
 	let isPlaying = false;
+	let audioContext = null;
 	export let data: PageData;
 
 	let currentSounds: {
@@ -46,7 +47,6 @@
 		// Fetch sounds and counter initially
 		bgm = new Audio('bgm.mp3');
 		bgm.loop = true;
-		bgm.volume = 0.1;
 
 		fetchCount().then((fetchedCounter) => {
 			counter = fetchedCounter;
@@ -124,7 +124,14 @@
 	const handlePlayBGM = (event) => {
 		isPlaying = event.target.checked;
 		if (isPlaying) {
-			console.log('playing');
+			if (!audioContext) {
+ 				audioContext = new (window.AudioContext)();
+				const gainNode = audioContext.createGain();
+				gainNode.gain.value = 0.1; 
+				const source = audioContext.createMediaElementSource(bgm);
+				source.connect(gainNode);
+				gainNode.connect(audioContext.destination);
+			}
 			bgm.play();
 		} else {
 			bgm.pause();
