@@ -65,7 +65,7 @@
 					}
 				}, 50);
 			}
-		}, 3000);
+		}, 30000);
 
 		const updateGlobalCounter = async () => {
 			if (localCounter == oldCounter) return;
