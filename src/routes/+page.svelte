@@ -63,7 +63,7 @@
 					} else {
 						clearInterval(raiseInterval); // Clear when done
 					}
-				}, 50);
+				}, 10);
 			}
 		}, 30000);
 
