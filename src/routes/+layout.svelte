@@ -7,8 +7,8 @@
 	<meta property="og:title" content={"Huzzah!"} />
 	<meta property="og:url" content="https://gigi-counter.web.app/" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://raw.githubusercontent.com/LegendAVRS/huzzah/main/static/huzzah.jpg" />
-	<meta property="twitter:card" content="summary" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/LegendAVRS/huzzah/main/static/embed.jpg" />
+	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="theme-color" content="#F5D5AE" />
 	<meta
 		name="description"
