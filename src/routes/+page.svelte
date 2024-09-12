@@ -65,7 +65,7 @@
 					}
 				}, 10);
 			}
-		}, 30000);
+		}, 10000);
 
 		const updateGlobalCounter = async () => {
 			if (localCounter == oldCounter) return;
@@ -81,7 +81,7 @@
 				console.error(e);
 			}
 		};
-		const updateInterval = setInterval(updateGlobalCounter, 10000);
+		const updateInterval = setInterval(updateGlobalCounter, 5000);
 
 		// Return a synchronous cleanup function
 		return () => {
