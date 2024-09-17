@@ -163,7 +163,7 @@
 			Art by <a
 				target="_blank"
 				href="https://x.com/SharkBiteTail/status/1832814903364899000"
-				class="underline underline-offset-3">@SharBiteTail</a
+				class="underline underline-offset-3">@SharkBiteTail</a
 			>
 		</p>
 		<p class="text-xs">
